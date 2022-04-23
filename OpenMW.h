@@ -1,0 +1,45 @@
+#pragma once
+#include "macros.h"
+__DISABLE_VC_WARNINGS__()
+#include <OpenSpeed/Game.MW05/MW05.h>
+#include <OpenSpeed/Game.MW05/Extensions.h>
+#include <OpenSpeed/Game.MW05/Types/ActionData.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Gen/gameplay.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Gen/rigidbodyspecs.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Gen/simsurface.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Gen/timeofdaylighting.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Gen/trafficpattern.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Layouts/gameplaylayout.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Layouts/rigidbodyspecslayout.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Layouts/simsurfacelayout.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Layouts/timeofdaylightinglayout.h>
+#include <OpenSpeed/Game.MW05/Types/Attrib/Layouts/trafficpatternlayout.h>
+#include <OpenSpeed/Game.MW05/Types/AICopManager.h>
+#include <OpenSpeed/Game.MW05/Types/AIPursuit.h>
+#include <OpenSpeed/Game.MW05/Types/AITarget.h>
+#include <OpenSpeed/Game.MW05/Types/CarPart.h>
+#include <OpenSpeed/Game.MW05/Types/cFrontendDatabase.h>
+#include <OpenSpeed/Game.MW05/Types/FEngHud.h>
+#include <OpenSpeed/Game.MW05/Types/Game.h>
+#include <OpenSpeed/Game.MW05/Types/GenericMessage.h>
+#include <OpenSpeed/Game.MW05/Types/GPS.h>
+#include <OpenSpeed/Game.MW05/Types/GRaceParameters.h>
+#include <OpenSpeed/Game.MW05/Types/GRacerInfo.h>
+#include <OpenSpeed/Game.MW05/Types/GRaceStatus.h>
+#include <OpenSpeed/Game.MW05/Types/GTrigger.h>
+#include <OpenSpeed/Game.MW05/Types/IAudible.h>
+#include <OpenSpeed/Game.MW05/Types/IDamageable.h>
+#include <OpenSpeed/Game.MW05/Types/IEngine.h>
+#include <OpenSpeed/Game.MW05/Types/InputPlayer.h>
+#include <OpenSpeed/Game.MW05/Types/IRenderable.h>
+#include <OpenSpeed/Game.MW05/Types/ITransmission.h>
+#include <OpenSpeed/Game.MW05/Types/LocalPlayer.h>
+#include <OpenSpeed/Game.MW05/Types/Physics.h>
+#include <OpenSpeed/Game.MW05/Types/PVehicle.h>
+#include <OpenSpeed/Game.MW05/Types/ResetCar.h>
+#include <OpenSpeed/Game.MW05/Types/RBVehicle.h>
+#include "OpenSpeed/Game.MW05/Types/RideInfo.h"
+#include <OpenSpeed/Game.MW05/Types/TimeOfDay.h>
+namespace OpenMW = OpenSpeed::MW05;
+__RESTORE_VC_WARNINGS__()

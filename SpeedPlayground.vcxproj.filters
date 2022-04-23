@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Helpers\Dear ImGui\imgui.cpp">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\imgui_demo.cpp">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\imgui_draw.cpp">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\imgui_tables.cpp">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\imgui_user.cpp">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\imgui_widgets.cpp">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\backends\imgui_impl_dx9.cpp">
+      <Filter>Helpers\Dear ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\backends\imgui_impl_win32.cpp">
+      <Filter>Helpers\Dear ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\fmt\format.cc">
+      <Filter>Helpers\fmt</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="macros.h" />
+    <ClInclude Include="Helpers\Dear ImGui\imconfig.h">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\imgui.h">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\imgui_internal.h">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\imgui_user.h">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\imstb_rectpack.h">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\imstb_textedit.h">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\backends\imgui_impl_dx9.h">
+      <Filter>Helpers\Dear ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\backends\imgui_impl_win32.h">
+      <Filter>Helpers\Dear ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\fmt\core.h">
+      <Filter>Helpers\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\fmt\format.h">
+      <Filter>Helpers\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\fmt\format-inl.h">
+      <Filter>Helpers\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\fmt\ostream.h">
+      <Filter>Helpers\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\fmt\printf.h">
+      <Filter>Helpers\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenMW.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{972c9544-3d43-4264-a9b5-39886d533e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers\Dear ImGui">
+      <UniqueIdentifier>{82c17bc0-e8d5-4b50-b423-36b51b675c94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers\Dear ImGui\backends">
+      <UniqueIdentifier>{dcfffb90-cc22-4d50-bedd-fc5cbfec2a8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers\Dear ImGui\misc">
+      <UniqueIdentifier>{48bbeed5-4295-445b-b46e-0d421d835f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers\fmt">
+      <UniqueIdentifier>{2411edf1-0258-421a-84ae-5b70514c84eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

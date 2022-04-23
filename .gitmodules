@@ -1,0 +1,6 @@
+[submodule "OpenSpeed"]
+	path = OpenSpeed
+	url = https://github.com/berkayylmao/OpenSpeed
+[submodule "MirrorHook"]
+	path = MirrorHook
+	url = https://github.com/berkayylmao/MirrorHook
