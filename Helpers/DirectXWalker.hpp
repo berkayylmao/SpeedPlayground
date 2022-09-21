@@ -239,17 +239,16 @@ class DirectXWalker {
         } break;
       }
       {
-        auto to = reinterpret_cast<std::uintptr_t>(&hkDirect3DCreate9);
-        auto rw = MemoryEditor::Get().GetRawMemory(mFrom);
+        static auto to = reinterpret_cast<std::uintptr_t>(&hkDirect3DCreate9);
+        auto        rw = MemoryEditor::Get().GetRawMemory(mFrom);
         if (rw.GetValue<std::uint16_t>() == 0x25FF) {
           sCreateInterface = *reinterpret_cast<D3DCreate_t*>((rw + 2).GetValue<std::uintptr_t>());
           (rw + 2).SetValue(&to);
         } else {
           sCreateInterface = &::Direct3DCreate9;
-          MemoryEditor::Get().Make(MemoryEditor::MakeType::JumpAbsolute, mFrom, to);
+          MemoryEditor::Get().Make(MemoryEditor::MakeType::JumpAbsolute, mFrom, reinterpret_cast<std::uintptr_t>(&to));
         }
       }
-      MemoryEditor::Get().Make(MemoryEditor::MakeType::Jump, mFrom, reinterpret_cast<std::uintptr_t>(&hkDirect3DCreate9));
     } catch (const SEHException& e) {
       MessageBoxA(nullptr, e.what(), "SpeedPlayground - Error in DirectXWalker!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
     }
