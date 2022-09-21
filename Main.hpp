@@ -29,7 +29,7 @@ namespace SpeedPlayground {
   namespace Implementations {
     namespace details {
       static inline std::uint32_t       sCurImplId     = 1;
-      static inline std::uint_least32_t sCustomSleepMS = 2;
+      static inline std::uint_least32_t sCustomSleepMS = 0;
 
       static constexpr inline std::uintptr_t sSleepFn  = 0x64CF00;
       static constexpr inline std::uintptr_t sImpl3Ret = 0x642EDA;
@@ -100,22 +100,6 @@ namespace SpeedPlayground {
       ImGui::SetNextWindowPos(ImGui::GetMainViewport()->Pos, ImGuiCond_Once);
       if (ImGui::Begin("SpeedPlayground"), nullptr, ImGuiWindowFlags_AlwaysAutoResize) {
         if (ImGui::BeginTabBar("##TabMain")) {
-          if (ImGui::BeginTabItem("Hasher")) {
-            static char          temp_array[256] = {0};
-            static std::uint32_t hash            = 0;
-            ImGui::InputText("Text", temp_array, 255);
-            if (ImGui::Button("stringhash32()")) hash = MW::Game::stringhash32(temp_array);
-            ImGui::SameLine();
-            if (ImGui::Button("bStringHash()")) hash = MW::Game::bStringHash(temp_array);
-            ImGui::SameLine();
-            if (ImGui::Button("Attrib::StringToKey()")) hash = MW::Attrib::StringToKey(temp_array);
-
-            std::string str_hash = std::format("0x{:08X}", hash);
-            ImGui::InputText("Hash", const_cast<char*>(str_hash.c_str()), str_hash.size(), ImGuiInputTextFlags_ReadOnly);
-
-            ImGui::EndTabItem();
-          }
-
           if (ImGui::BeginTabItem("Custom Frame Sleep Interval")) {
             ImGui::TextColored(ImVec4(0.0f, 1.0f, 0.1f, 1.0f), "Framerate %.1f", ImGui::GetIO().Framerate);
             ImGui::TextColored(ImVec4(0.0f, 1.0f, 0.1f, 1.0f), "Currently running implementation %" PRIu32, Implementations::details::sCurImplId);
@@ -123,19 +107,22 @@ namespace SpeedPlayground {
             ImGui::TextWrapped("- Implementation 1 is stock behavior.");
             ImGui::TextWrapped("- Implementation 2 removes the forced sleep entirely.");
             ImGui::TextWrapped("- Implementation 3 lets you set a custom sleep interval.");
+            ImGui::TextWrapped(
+                "NOTE: Implementation 3 with 0ms will be way more enjoyable than implementation 2. This is because implementation 2 sets a debug variable left "
+                "in the game and implementation 3 only forces 0ms sleep.");
 
             if (ImGui::BeginTabBar("##TabCustomFrameSleepInterval")) {
-              if (ImGui::BeginTabItem("Impl. 1")) {
+              if (ImGui::BeginTabItem("Implementation 1")) {
                 if (ImGui::Button("Enable")) g_GameLoopActions.push_back([]() { Implementations::InstallImpl1(); });
                 ImGui::EndTabItem();
               }
 
-              if (ImGui::BeginTabItem("Impl. 2")) {
+              if (ImGui::BeginTabItem("Implementation 2")) {
                 if (ImGui::Button("Enable")) g_GameLoopActions.push_back([]() { Implementations::InstallImpl2(); });
                 ImGui::EndTabItem();
               }
 
-              if (ImGui::BeginTabItem("Impl. 3")) {
+              if (ImGui::BeginTabItem("Implementation 3")) {
                 static std::uint_least32_t sMin = 0;
                 static std::uint_least32_t sMax = 100;
 
@@ -148,6 +135,22 @@ namespace SpeedPlayground {
 
               ImGui::EndTabBar();
             }
+
+            ImGui::EndTabItem();
+          }
+
+          if (ImGui::BeginTabItem("Hasher")) {
+            static char          temp_array[256] = {0};
+            static std::uint32_t hash            = 0;
+            ImGui::InputText("Text", temp_array, 255);
+            if (ImGui::Button("stringhash32()")) hash = MW::Game::stringhash32(temp_array);
+            ImGui::SameLine();
+            if (ImGui::Button("bStringHash()")) hash = MW::Game::bStringHash(temp_array);
+            ImGui::SameLine();
+            if (ImGui::Button("Attrib::StringToKey()")) hash = MW::Attrib::StringToKey(temp_array);
+
+            std::string str_hash = std::format("0x{:08X}", hash);
+            ImGui::InputText("Hash", const_cast<char*>(str_hash.c_str()), str_hash.size(), ImGuiInputTextFlags_ReadOnly);
 
             ImGui::EndTabItem();
           }
