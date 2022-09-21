@@ -15,12 +15,14 @@
 
 # Build results
 [Dd]ebug/
-[Dd]ebug - MW05/
-[Dd]ebug - Carbon/
+[Dd]ebug_CopyToMW05/
+[Dd]ebug_CopyToCarbon/
+[Dd]ebug_CopyToProStreet/
 [Dd]ebugPublic/
 [Rr]elease/
-[Rr]elease - MW05/
-[Rr]elease - Carbon/
+[Rr]elease_CopyToMW05/
+[Rr]elease_CopyToCarbon/
+[Rr]elease_CopyToProStreet/
 [Rr]eleases/
 x64/
 x86/
@@ -343,3 +345,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 *.licenseheader
+/src/Extensions/Mods/ModCustomSunAndSky.hpp

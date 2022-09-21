@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="_win32entry\dllmain.cpp">
+      <Filter>_win32entry</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Dear ImGui\misc\freetype\imgui_freetype.cpp">
+      <Filter>Helpers\Dear ImGui\misc\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="_vs\pch.cpp">
+      <Filter>_vs</Filter>
+    </ClCompile>
     <ClCompile Include="Helpers\Dear ImGui\imgui.cpp">
       <Filter>Helpers\Dear ImGui</Filter>
     </ClCompile>
@@ -15,9 +22,6 @@
     <ClCompile Include="Helpers\Dear ImGui\imgui_tables.cpp">
       <Filter>Helpers\Dear ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\imgui_user.cpp">
-      <Filter>Helpers\Dear ImGui</Filter>
-    </ClCompile>
     <ClCompile Include="Helpers\Dear ImGui\imgui_widgets.cpp">
       <Filter>Helpers\Dear ImGui</Filter>
     </ClCompile>
@@ -27,13 +31,39 @@
     <ClCompile Include="Helpers\Dear ImGui\backends\imgui_impl_win32.cpp">
       <Filter>Helpers\Dear ImGui\backends</Filter>
     </ClCompile>
-    <ClCompile Include="Helpers\fmt\format.cc">
-      <Filter>Helpers\fmt</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="macros.h" />
+    <ClInclude Include="Helpers\GameLoopWalker.hpp">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\WndProcWalker.hpp">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\DirectXWalker.hpp">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\imstb_truetype.h">
+      <Filter>Helpers\Dear ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\misc\freetype\imgui_freetype.h">
+      <Filter>Helpers\Dear ImGui\misc\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\misc\fonts\OpenSans-SemiBold.hpp">
+      <Filter>Helpers\Dear ImGui\misc\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\Dear ImGui\misc\fonts\OpenSans-Regular.hpp">
+      <Filter>Helpers\Dear ImGui\misc\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.hpp" />
+    <ClInclude Include="_vs\macros.h">
+      <Filter>_vs</Filter>
+    </ClInclude>
+    <ClInclude Include="_vs\pch.h">
+      <Filter>_vs</Filter>
+    </ClInclude>
+    <ClInclude Include="_vs\seh_handler.h">
+      <Filter>_vs</Filter>
+    </ClInclude>
     <ClInclude Include="Helpers\Dear ImGui\imconfig.h">
       <Filter>Helpers\Dear ImGui</Filter>
     </ClInclude>
@@ -41,9 +71,6 @@
       <Filter>Helpers\Dear ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Helpers\Dear ImGui\imgui_internal.h">
-      <Filter>Helpers\Dear ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="Helpers\Dear ImGui\imgui_user.h">
       <Filter>Helpers\Dear ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Helpers\Dear ImGui\imstb_rectpack.h">
@@ -58,38 +85,36 @@
     <ClInclude Include="Helpers\Dear ImGui\backends\imgui_impl_win32.h">
       <Filter>Helpers\Dear ImGui\backends</Filter>
     </ClInclude>
-    <ClInclude Include="Helpers\fmt\core.h">
-      <Filter>Helpers\fmt</Filter>
-    </ClInclude>
-    <ClInclude Include="Helpers\fmt\format.h">
-      <Filter>Helpers\fmt</Filter>
-    </ClInclude>
-    <ClInclude Include="Helpers\fmt\format-inl.h">
-      <Filter>Helpers\fmt</Filter>
-    </ClInclude>
-    <ClInclude Include="Helpers\fmt\ostream.h">
-      <Filter>Helpers\fmt</Filter>
-    </ClInclude>
-    <ClInclude Include="Helpers\fmt\printf.h">
-      <Filter>Helpers\fmt</Filter>
-    </ClInclude>
-    <ClInclude Include="OpenMW.h" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="_win32entry">
+      <UniqueIdentifier>{afdb3792-6716-4629-9b2a-33bf24adb96a}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Helpers">
-      <UniqueIdentifier>{972c9544-3d43-4264-a9b5-39886d533e76}</UniqueIdentifier>
+      <UniqueIdentifier>{d10d6911-e6a4-481e-97bc-095a62a8b648}</UniqueIdentifier>
     </Filter>
     <Filter Include="Helpers\Dear ImGui">
-      <UniqueIdentifier>{82c17bc0-e8d5-4b50-b423-36b51b675c94}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Helpers\Dear ImGui\backends">
-      <UniqueIdentifier>{dcfffb90-cc22-4d50-bedd-fc5cbfec2a8d}</UniqueIdentifier>
+      <UniqueIdentifier>{42397f28-9868-4da0-bd08-899c2644ec74}</UniqueIdentifier>
     </Filter>
     <Filter Include="Helpers\Dear ImGui\misc">
-      <UniqueIdentifier>{48bbeed5-4295-445b-b46e-0d421d835f1c}</UniqueIdentifier>
+      <UniqueIdentifier>{a5279a28-6254-435e-8d34-ba595315ad93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Helpers\fmt">
-      <UniqueIdentifier>{2411edf1-0258-421a-84ae-5b70514c84eb}</UniqueIdentifier>
+    <Filter Include="Helpers\Dear ImGui\misc\freetype">
+      <UniqueIdentifier>{635d1189-c3fa-49ed-a985-2b3c321d66a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Helpers\Dear ImGui\misc\fonts">
+      <UniqueIdentifier>{7d65ecea-3937-488e-b492-2293f27b0543}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_vs">
+      <UniqueIdentifier>{3c881576-6db3-4072-bd8b-36b89d0b0b89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers\Dear ImGui\backends">
+      <UniqueIdentifier>{fb66e30e-2989-4632-9943-0bc7a2856c98}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="Helpers\Dear ImGui\misc\imgui.natvis">
+      <Filter>Helpers\Dear ImGui\misc</Filter>
+    </Natvis>
   </ItemGroup>
 </Project>
