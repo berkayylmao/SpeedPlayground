@@ -42,8 +42,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;SPEEDPLAYGROUND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(DXSDK_DIR)Include;$(SolutionDir)NFSPluginSDK;$(ProjectDir)_vs;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -60,60 +61,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Helpers\Dear ImGui\backends\imgui_impl_dx9.h" />
-    <ClInclude Include="Helpers\Dear ImGui\backends\imgui_impl_win32.h" />
-    <ClInclude Include="Helpers\Dear ImGui\imconfig.h" />
-    <ClInclude Include="Helpers\Dear ImGui\imgui.h" />
-    <ClInclude Include="Helpers\Dear ImGui\imgui_internal.h" />
-    <ClInclude Include="Helpers\Dear ImGui\imstb_rectpack.h" />
-    <ClInclude Include="Helpers\Dear ImGui\imstb_textedit.h" />
-    <ClInclude Include="Helpers\Dear ImGui\imstb_truetype.h" />
-    <ClInclude Include="Helpers\Dear ImGui\misc\fonts\OpenSans-Regular.hpp" />
-    <ClInclude Include="Helpers\Dear ImGui\misc\fonts\OpenSans-SemiBold.hpp" />
-    <ClInclude Include="Helpers\Dear ImGui\misc\freetype\imgui_freetype.h" />
-    <ClInclude Include="Helpers\DirectXWalker.hpp" />
-    <ClInclude Include="Helpers\GameLoopWalker.hpp" />
-    <ClInclude Include="Helpers\WndProcWalker.hpp" />
     <ClInclude Include="Main.hpp" />
-    <ClInclude Include="_vs\macros.h" />
-    <ClInclude Include="_vs\pch.h" />
-    <ClInclude Include="_vs\seh_handler.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Helpers\Dear ImGui\backends\imgui_impl_dx9.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Helpers\Dear ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\backends\imgui_impl_win32.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Helpers\Dear ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\imgui.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\imgui_demo.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\imgui_draw.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\imgui_tables.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\imgui_widgets.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Helpers\Dear ImGui\misc\freetype\imgui_freetype.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)Helpers\Dear ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="_vs\pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="_win32entry\dllmain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Natvis Include="Helpers\Dear ImGui\misc\imgui.natvis" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,8 @@
 /*
 // clang-format off
 //
-//    Pepega ProStreet Fiddler (Pepega Mod)
-//    Copyright (C) 2022 Berkay Yigit <berkaytgy@gmail.com>
+//    NFSMW ChooseCorrectAnimation Fix
+//    Copyright (C) 2026 Berkay Yigit <berkaytgy@gmail.com>
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU Affero General Public License as published
@@ -20,7 +20,6 @@
 // clang-format on
 */
 
-#include "pch.h"
 #include "Main.hpp"
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID) {
